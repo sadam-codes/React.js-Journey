@@ -1,0 +1,152 @@
+https://docs.chaicode.com/git-and-github/
+
+
+Git-: 
+
+Definition: Git is a distributed version control system (DVCS) that tracks changes to files 
+and coordinates work on those files among multiple people. It's primarily used for managing the history 
+of code changes in software development.
+
+Github-: 
+
+Github is a web-based hosting service for Git repositories. Github is an online platform that allows
+you to store and share your code with others. It is a popular platform for developers to collaborate 
+on projects and to share code. It is not that Github is the only provider of Git repositories,
+but it is one of the most popular ones.
+
+directory / repo / branch / folder  => are same things
+
+=> Install Git-: 
+https://git-scm.com/downloads.
+
+=> Account on Github
+
+Terminologies -: 
+
+=> git --version
+=> pwd   (present work directory)
+=> cd sadam
+=> cls   (clear screen)
+=> clear
+=> mkdir sadam.txt  (make folder "sadam.txt")
+=> touch sadam.txt   (make file "sadam.txt")
+=> git init
+=> git add sadam.txt sadam2.txt
+=> git add .
+=> git commit -m "message"
+=> git logs
+=> git log --oneline   (press q for ctrl+c (meas exit))
+=> git status -s   (knsi file kis stage pe hai)
+=> git reset --hard HEAD~1    (one step back to code)
+=> .gitignore   (gitignore file generator for react.js/node.js)
+=> ctrl + j , ctrl + `  (open terminal)
+  => .env file (API_KEY , API_SECRET, DATABASE_URL , PORT , )
+  => node_modules
+git doest tract empty files , so make following file
+=> .gitkeep ( make this file in any empty file)
+
+check username and email of your github Account using commands
+=> git config --global user.name
+=> git config --global user.email
+yes
+
+------------------
+Git Blame (extension download)
+
+git config --global user.name "name"
+git config --global user.email "email@.com"
+git config --global core.editor "code --wait"
+git config --global core.autocrlf "input"
+
+
+
+
+----------
+branching
+2 developers are working on same website
+and -:  
+sadam will make navbar 
+Ali will make footer
+
+now first code have 32 lines and now sadam will given a copy of that 32 lines of code because our original code 
+did't pollute , if anycase sadam will write a bad code. 
+and this is callled branching.
+and he will add navbar in that 32 lines of copied code 
+and after that everything will right , he will merge hi code in original 32 lines 
+and delete that copy 
+
+same as it is Ali will make footer
+
+branching -: 
+32 lines ---------- 132 lines -------- 232 lines------ 332 lines
+
+
+how to make branching-:
+=>git branch
+=>git branch feature/navbar
+=>git switch feature/navbar   (switch from master branch to your copied branch)
+=>git switch -C feature/navbar   (make and switch in branch)
+=>git branch
+=>git merge master
+=> git branch -d feature/navbar (delete branch)
+(and if you are changing in master/main branch , write vice versa)
+
+=> git log --oneline --graph
+=> git branch -d feature/navbar  (delete copy branch)
+
+
+----------
+
+
+stashing -: 
+
+jab ap ksi branch mn kaam kr rhe hoa aur ap ne kch code likha aur ap ne usko commit ni kiya aur 
+ap dosre wli branch mn switch krne ki kooshsih krte ho ... to git apko bolta hai k saved ni hva .. to
+=> git stash apply
+changes delete ho jayen ge .. to hm unko stash/draft mn bhej dte hein aur baad mn waps aa k unko apply kr lte hein
+
+
+=> git stash 
+=> git stash apply
+=> git stash clear  
+
+
+
+---------
+common steps-:
+
+=> main bnda folder bnaye ga and initial file bnayega
+aur usko github pe push kr dega aur usko collaborator add kr dega.
+--------
+now on other person's laptop-:
+
+=>saaray bnde uss repo se cloning krn 
+--open terminal and run command with original url of that repo, and will meet you on code/download
+(git clone https://github.com/sadammuneer/hello.git)
+
+=>aur sb loog apni aik copy branch create krn (for not conflict)  [very important]  => git switch -C navbar
+   aur apna sara code ussi copy branch mn likhein
+
+us k complete hn pe commit and push krn aur inform kr dein teammate ko. (git push origin navbar)
+
+now on admin laptop-:
+
+
+=> And main merger fetch krega and merger and re-push krega code.
+=> git fetch
+=> git switch navbar
+------    => check that code and will now move to main branch
+=> git switch main
+=> git merge navbar
+=> git push origin main
+
+
+---------
+now on other person laptop -;
+
+admin will inform his team that i have merge all code on main branch 
+you can check
+now he will -:
+=> cls
+=> git fetch
+=> git pull

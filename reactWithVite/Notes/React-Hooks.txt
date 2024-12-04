@@ -1,0 +1,31 @@
+Hooks -:
+In React, hooks are functions that let you use state and other React features in functional components.
+Before hooks, managing state and side effects required class components. Hooks allow you to use these features without needing classes,
+making functional components more powerful and easier to work with.
+
+
+As of React 18, there are 13 official hooks available. 
+but few famous are here 1-: 
+
+1-: useState (managing state and handling side effects in functional components)
+2-: useEffect (handle the side effects in functional components like fetching data, directly updating the DOM e.t.c )
+
+3-: useContext-:
+                 In React, "useContext" is a hook that allows you to access and use the context within a functional component.
+It enables the sharing of values (like data or functions) across different components in the component
+tree without needing to pass props manually at every level.
+
+4-: useReducer-:
+                 In React, useReducer is a hook that is used to manage complex state logic in a functional component.
+It is an alternative to useState and is particularly useful when the state logic involves multiple sub-values or
+when the next state depends on the previous one.
+
+
+5-: useCallback (Skipping re-rendering of components)
+               In React, useCallback is a hook that helps optimize the performance of your components by memoizing 
+functions. It is particularly useful in preventing unnecessary re-creations of functions during re-renders,
+which can be important when passing functions as props to child components or when functions are dependencies
+in useEffect, useMemo, or other hooks.
+
+6-: useMemo
+7-: useRef  => ksi bi chez ka jab hmen reference laina hta hai.. to us mn useRef use hta hai

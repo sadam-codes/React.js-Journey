@@ -1,0 +1,48 @@
+Virtual DOM-:
+
+
+=> open main.jsx
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+
+=> what does createRoot do in React.js-:
+   Behind the scene it creates the DOM like structure , like browser have DOM
+=> why it needs to create the DOM like structure -: ????
+because it compares the main DOM and his DOM and updated only that things that actually updated in UI.
+but our browser remove all DOM and repaint our browser again. and whle DOM structure prepair again
+and that's why its called page reloading in javaScript
+
+But in Virtual DOM , we can tract whole DOM in tree structure
+and the values that have been changed , will be replaced in tree
+
+Behind the scene , React use fiber algorithm
+=> Fiber in React.js -: ???
+
+React Fiber allows React to break down rendering work into smaller units and spread it out over multiple frames
+This makes the rendering process more flexible and improving the performance of React applications.
+=> Key Concepts of React Fiber-:
+1: Incremental Rendering-:
+React Fiber breaks down the rendering work into small chunks, allowing React to pause and resume work as needed.
+2: Prioritization
+3: Better Error Handling
+4: Enhanced Animation and Layout Handling
+
+=> Diffing Algorithm:
+
+React compares the new Virtual DOM tree with the previous one using a diffing algorithm to 
+determine which parts of the real DOM have changed.
+
+Reconciliation: / Behind the scene called Virtual DOM
+
+Only the changed parts are updated in the real DOM, rather than re-rendering the entire tree.
+This process is called reconciliation and helps optimize performance.

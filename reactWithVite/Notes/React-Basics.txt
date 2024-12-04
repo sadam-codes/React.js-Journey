@@ -1,0 +1,61 @@
+React.js
+=> install react with vite/ Bun
+=> react version 19
+=> delete dependecies from package.json and run commands
+   . npm install react@rc
+   . npm i react-dom@rc
+ 
+=> folder structure
+=> naming convension
+ . camelCase
+ . PascalCase  (for components)
+ . snake_case
+ . Kebab-case (filesnames,css classes names, id names)
+
+=> JSX=>javascript XML , and it allows to write HTML into Javascript
+ 
+=> Babel => (behind the scene browser did't understand JSX)
+The compiler that is used to convert the React code into js  
+----------------------------------------------------------------
+
+components => functons that returns JSX
+-> Class based components => this is how components were created at start
+-> functional based components => modern way of writing JSX
+sadam.js to Sadam.jsx
+import / export
+1-:default import and export => export default sadam
+2-:Names import and export => export const sadammm=(){...} => import {sadammm,interview,multipleComponenets} from "../"
+3-:Mixed import and export => import defaultNamed,{sadammm,multipleComponenets} from "../"
+
+----------------------
+safe us from duplication of code ? how ?  
+what's the difference b/w simple html . boostrap code and react code 
+power of components
+---------------------------
+React Fragments 
+components can't return multiple elements without a wrapper div
+1-: <React.Fragment> </React.Fragment>
+2-: import { Fragment } from "react";
+   <Fragment>
+      <p>paragrpg</p>
+      <h1>headin</h1>
+   </Fragment>
+3-: <div> </div>
+shorthand syntax
+4-: <> </>
+
+------------------------
+Loops in React.js
+in react.js we dont use for,while and do-while looops 
+we only use the map functions
+-----------------------
+Props is React.js
+The properties , that provide the data from parent to childs
+-------------------
+
+Pure Components -: 
+
+Pure Component is a type of React component that implements a shallow comparison on its props and state to determine 
+whether the component should re-render. 
+Stop re-rendering of component.
+This means that a Pure Component will only re-render if there is a difference in the current props or state compared to the previous ones.
