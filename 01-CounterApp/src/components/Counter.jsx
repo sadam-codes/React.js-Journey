@@ -11,7 +11,7 @@ function Counter() {
   };
   return (
     <div>
-      <h1 className="bg-black">Welcome to Counter website</h1>
+      <h1 className="bg-black text-white">Welcome to Counter website</h1>
       <h1>{counter}</h1>
 
       <button onClick={addValue}>Increment</button>
