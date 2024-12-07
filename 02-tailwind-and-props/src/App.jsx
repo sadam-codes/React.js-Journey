@@ -11,7 +11,7 @@ function App() {
       <Main />
       <div className="flex py-20 sm:flex-row flex-col">
         <Cards username="sadam" />
-        <Cards username="Ali" />
+        <Cards />
         <Cards username="Rizwan" />
       </div>
       <Props />
