@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import Cards from "./components/Cards";
+import Props from "./components/Props";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
         <Cards username="Ali" />
         <Cards username="Rizwan" />
       </div>
+      <Props/>
+      <Props username = 'Husnain from props'/>
       <Footer />
     </div>
   );
