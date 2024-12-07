@@ -8,6 +8,10 @@ function Counter() {
   };
   const removeValue = () => {
     counter > 0 ? setCounter(counter - 1) : counter;
+
+    // interview question
+    // counter > 0 ? setCounter((prevCounter) => prevCounter - 1) : counter;
+    // counter > 0 ? setCounter((prevCounter) => prevCounter - 1) : counter;
   };
   return (
     <div>
