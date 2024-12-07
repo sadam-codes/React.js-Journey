@@ -1,10 +1,14 @@
-import { useState } from "react";
+import Navbar from "./components/Navbar";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <>
-      <h1 className="bg-black text-left text-white p-20 m-20">hello</h1>
-    </>
+    <div className="container mx-auto">
+      <Navbar />
+      <Main />
+      <Footer />
+    </div>
   );
 }
 
