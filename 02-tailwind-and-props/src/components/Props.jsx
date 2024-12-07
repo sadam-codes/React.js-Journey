@@ -5,6 +5,7 @@ const Props = ({username = 'Sadam as default name'}) => {
     <div>
       <h1>{username}</h1>
     </div>
+    
   );
 };
 
