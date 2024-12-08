@@ -46,3 +46,7 @@ Reconciliation: / Behind the scene called Virtual DOM
 
 Only the changed parts are updated in the real DOM, rather than re-rendering the entire tree.
 This process is called reconciliation and helps optimize performance.
+
+Q-: 
+take an arrray , loop them and show in list .
+but why we use keys ?
