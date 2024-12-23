@@ -150,3 +150,6 @@ now he will -:
 => cls
 => git fetch
 => git pull
+
+
+this is all about git and github.
