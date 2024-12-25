@@ -1,0 +1,46 @@
+Basic Questions
+1. What is React Router? Why is it used?
+Answer:
+React Router is a library for routing in React applications. It allows developers to navigate between different components or pages of an application without refreshing the browser. It is used for:
+
+Enabling Single Page Application (SPA) functionality.
+Defining dynamic routes and parameters.
+Managing navigation states.
+2. What are the main components of React Router?
+Answer:
+The main components are:
+
+BrowserRouter: Manages the routing process using the HTML5 History API.
+Routes: A wrapper for <Route> components to define available routes.
+Route: Defines a specific path and the component to render for that path.
+Link: Enables navigation to a different route.
+NavLink: Similar to <Link> but allows styling for active routes.
+useParams: Access route parameters.
+useNavigate: Programmatically navigate between routes.
+useLocation: Access the current route's location object.
+Intermediate Questions
+3. How is routing handled in React?
+Answer:
+Routing in React is handled using React Router.
+
+Wrap your app in a <BrowserRouter> component.
+Use <Routes> to group routes.
+Define routes using <Route path="/path" element={<Component />} />.
+Use <Link> or <NavLink> for navigation.
+4. What is the difference between <BrowserRouter> and <HashRouter>?
+Answer:
+
+BrowserRouter: Uses the HTML5 History API to manage routing. The URL is clean and does not contain a hash (#).
+HashRouter: Uses the hash part of the URL for routing (e.g., www.example.com/#/path). It is useful for older browsers that do not support the History API.
+
+
+6. What is the difference between <Link> and <NavLink>?
+Answer:
+
+Link: Used for navigation without reloading the page.
+NavLink: Extends <Link> and allows you to style or apply an active class to the link when the route matches.
+7. What is the purpose of the Switch component? Why was it replaced by Routes?
+Answer:
+
+Switch (React Router v5): Renders the first route that matches the URL.
+Routes (React Router v6): Simplifies the API and automatically handles nested routes.
