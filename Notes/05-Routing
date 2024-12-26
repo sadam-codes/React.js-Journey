@@ -1,46 +1,168 @@
-Basic Questions
-1. What is React Router? Why is it used?
+What is React Router? Why is it used?
 Answer:
-React Router is a library for routing in React applications. It allows developers to navigate between different components or pages of an application without refreshing the browser. It is used for:
+React Router is a library for routing in React applications. It enables navigation between different components or views without reloading the entire page. It’s used to build Single Page Applications (SPA) and manage dynamic routing efficiently.
 
-Enabling Single Page Application (SPA) functionality.
-Defining dynamic routes and parameters.
-Managing navigation states.
-2. What are the main components of React Router?
-Answer:
-The main components are:
-
-BrowserRouter: Manages the routing process using the HTML5 History API.
-Routes: A wrapper for <Route> components to define available routes.
-Route: Defines a specific path and the component to render for that path.
-Link: Enables navigation to a different route.
-NavLink: Similar to <Link> but allows styling for active routes.
-useParams: Access route parameters.
-useNavigate: Programmatically navigate between routes.
-useLocation: Access the current route's location object.
-Intermediate Questions
-3. How is routing handled in React?
-Answer:
-Routing in React is handled using React Router.
-
-Wrap your app in a <BrowserRouter> component.
-Use <Routes> to group routes.
-Define routes using <Route path="/path" element={<Component />} />.
-Use <Link> or <NavLink> for navigation.
-4. What is the difference between <BrowserRouter> and <HashRouter>?
+What are the main features of React Router?
 Answer:
 
-BrowserRouter: Uses the HTML5 History API to manage routing. The URL is clean and does not contain a hash (#).
-HashRouter: Uses the hash part of the URL for routing (e.g., www.example.com/#/path). It is useful for older browsers that do not support the History API.
-
-
-6. What is the difference between <Link> and <NavLink>?
+Dynamic routing
+Nested routes
+Declarative routing with <Routes> and <Route>
+Programmatic navigation using useNavigate
+Support for URL parameters and query strings
+Lazy loading and code-splitting with React.lazy and Suspense
+What is the difference between BrowserRouter and HashRouter?
 Answer:
 
-Link: Used for navigation without reloading the page.
-NavLink: Extends <Link> and allows you to style or apply an active class to the link when the route matches.
-7. What is the purpose of the Switch component? Why was it replaced by Routes?
+BrowserRouter uses the HTML5 History API for clean URLs without a hash (#). Requires server configuration.
+HashRouter uses the hash portion of the URL for routing. No server configuration is required.
+
+
+
+
+----------------------------
+What is the difference between React Router v5 and v6?
 Answer:
 
-Switch (React Router v5): Renders the first route that matches the URL.
-Routes (React Router v6): Simplifies the API and automatically handles nested routes.
+Routes: v6 replaces Switch with Routes.
+Exact Prop: v6 matches routes exactly by default; no need for exact.
+Nested Routes: v6 simplifies nested route configuration.
+Redirect: Redirect is replaced by Navigate in v6.
+What is the purpose of useNavigate? How is it different from useHistory?
+Answer:
+useNavigate is used in React Router v6 for programmatic navigation. It replaces useHistory from v5. While useHistory returns a history object, useNavigate is a function that directly navigates to a route.
+
+What is a Route Parameter? How do you use it?
+Answer:
+Route parameters are dynamic parts of the URL. You can use :paramName in the path prop of a route and access it using the useParams hook.
+
+Example:
+
+<Route path="/user/:id" element={<User />} />
+const { id } = useParams();
+
+--------------
+How do you implement a 404 Not Found page in React Router?
+Answer:
+By using the path="*" route to catch all unmatched paths:
+<Route path="*" element={<NotFound />} />
+
+----------------
+What is Link in React Router? How is it different from an <a> tag?
+Answer:
+Link is used for client-side navigation, avoiding full-page reloads. Unlike <a>, it uses the React Router mechanism for updating the URL and rendering components.
+
+Example:
+
+<Link to="/about">About</Link>
+
+---------------
+
+
+What is Lazy Loading? How is it implemented in React Router?
+Answer:
+Lazy loading loads components only when needed to improve performance. It’s implemented with React.lazy and Suspense.
+
+Example:
+const About = React.lazy(() => import('./About'));
+<Suspense fallback={<div>Loading...</div>}>
+  <Route path="/about" element={<About />} />
+</Suspense>
+
+
+--------------
+What are Nested Routes in React Router? How do you define them?
+Answer:
+Nested routes allow defining routes within other routes.
+Example:
+
+<Route path="/dashboard" element={<Dashboard />}>
+  <Route path="profile" element={<Profile />} />
+</Route>
+-------------------
+
+
+How do you handle query parameters in React Router?
+Answer:
+Use the useLocation hook to access query parameters:
+
+const location = useLocation();
+const params = new URLSearchParams(location.search);
+console.log(params.get('query'));
+-------------
+How do you redirect in React Router?
+Answer:
+In React Router v6, use the Navigate component:
+<Route path="/old" element={<Navigate to="/new" />} />
+-------------
+
+
+How do you pass state with navigation in React Router?
+Answer:
+Use the state property in Link or useNavigate:
+
+navigate('/profile', { state: { user: 'John' } });
+const location = useLocation();
+console.log(location.state.user);
+
+
+---------------
+
+How do you restrict access to certain routes (Protected Routes)?
+Answer:
+Create a PrivateRoute component that checks authentication:
+
+const PrivateRoute = ({ element }) => {
+  const isAuth = useAuth();
+  return isAuth ? element : <Navigate to="/login" />;
+};
+
+<Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
+-------------
+
+How do you implement a multi-step form with React Router?
+Answer:
+Use nested routes or route state to manage steps:
+
+<Routes>
+  <Route path="/form" element={<Form />}>
+    <Route path="step1" element={<Step1 />} />
+    <Route path="step2" element={<Step2 />} />
+  </Route>
+</Routes>
+
+-----------
+
+What happens if two routes have the same path?
+Answer:
+In React Router v5: The first matching route is rendered.
+In React Router v6: Routes are matched exactly, so only first page is rendered.
+
+----------
+
+How would you optimize a large-scale application with many routes?
+Answer:
+Use lazy loading for components.
+Implement dynamic imports with React.lazy and Suspense.
+Structure routes hierarchically to avoid duplication.
+Use memo and useMemo for performance optimization.
+
+
+------------
+
+What are the challenges you have faced with React Router in your projects?
+Answer:
+Common challenges include:
+Handling deeply nested routes.
+Managing authentication for protected routes.
+Synchronizing URL state with application state.
+Handling query parameters efficiently.
+
+-----------
+
+What are the alternatives to React Router?
+Answer:
+Alternatives include:
+Reach Router (merged into React Router v6)
+Next.js routing (for server-rendered apps)
+Navigo, Wouter, or Vanilla JavaScript routing for smaller projects.
