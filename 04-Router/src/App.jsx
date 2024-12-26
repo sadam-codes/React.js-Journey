@@ -13,19 +13,18 @@ import Github from "./components/Github";
 import User from "./components/User";
 import Contact from "./components/Contact";
 
-
 const App = () => {
   return (
     <Router>
       <div>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/github" element={<Github />} />
-          <Route path="/user" element={<User />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="user/:userid" element={<User />} />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/about" element={<About />} />
+          <Route exact path="/github" element={<Github />} />
+          <Route exact path="/user" element={<User />} />
+          <Route exact path="/contact" element={<Contact />} />
+          <Route exact path="user/:userid" element={<User />} />
         </Routes>
         <Footer />
       </div>
