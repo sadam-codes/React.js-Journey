@@ -75,6 +75,15 @@ function App() {
           >
             Green
           </button>
+
+          <button
+            className="px-3 outline-none bg-green-950 text-white rounded-3xl"
+            onClick={() => {
+              changeBgColor("brown");
+            }}
+          >
+            Brown
+          </button>
         </div>
       </div>
     </div>
