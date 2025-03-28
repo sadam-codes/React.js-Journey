@@ -1,18 +1,18 @@
 import React from "react";
 
-const Cards = ({ username = "Default Name" }) => {
-  // console.log(username);
+const Cards = () => {
   return (
     <div>
-      <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 cursor-pointer ">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {/* {username || 'Default'} */}
-          {username}
-        </h5>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.Pellentesque
-          eget massa justo.
-        </p>
+      <div className="px-6 pt-4 pb-2">
+        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+          sadam
+        </span>
+        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+          #travel
+        </span>
+        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+          #winter
+        </span>
       </div>
     </div>
   );

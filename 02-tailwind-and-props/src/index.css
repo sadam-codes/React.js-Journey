@@ -2,8 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .main-div {
-    @apply bg-red-700 flex flex-col md:flex-row md:justify-between min-h-10 items-center;
-  }
-}
+
