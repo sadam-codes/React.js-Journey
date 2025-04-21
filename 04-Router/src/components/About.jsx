@@ -9,18 +9,19 @@ export default function About() {
             <img
               src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
               alt="Not display image"
-          
+
             />
           </div>
           <div className="md:7/12 lg:w-6/12">
             <h2 className="text-2xl text-gray-900 font-bold md:text-4xl">
-              React development is carried out by passionate developers
+              React development is carried out by passionate Sadam
             </h2>
             <p className="mt-6 text-gray-600">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum
-              omnis voluptatem accusantium nemo perspiciatis delectus atque
-              autem! Voluptatum tenetur beatae unde aperiam, repellat expedita
-              consequatur! Officiis id consequatur atque doloremque!
+              Every individual bears responsibility for their actions and must be held accountable.
+               True insight and appreciation come from recognizing one's efforts and integrity. While
+                challenges may arise, they are met with resilience and determination. Professionalism
+                 and dedication ensure consistent success, even in the face of adversity. The ability 
+                 to deliver results while maintaining respect and commitment is a mark of excellence
             </p>
             <p className="mt-4 text-gray-600">
               Nobis minus voluptatibus pariatur dignissimos libero quaerat iure
